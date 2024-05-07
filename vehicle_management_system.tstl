@@ -1,0 +1,27 @@
+# Import the TSTL module
+import tstl
+
+# Create a TSTL tester object
+tester = tstl.TSTLTester()
+
+# Define actions
+tester.addAction('add_vehicle', args=["make", "model", "year", "mileage"])
+tester.addAction('remove_vehicle', args=["vehicle"])
+tester.addAction('find_vehicle_by_model', args=["model"])
+tester.addAction('record_maintenance', args=["vehicle", "type_of_service", "date", "mileage"])
+tester.addAction('calculate_fuel_efficiency', args=["vehicle", "start_mileage", "end_mileage", "fuel_used"])
+tester.addAction('find_vehicles_by_year_range', args=["start_year", "end_year"])
+tester.addAction('find_vehicles_by_make', args=["make"])
+tester.addAction('get_fleet_maintenance_due')
+tester.addAction('get_fleet_insurance_info')
+tester.addAction('log_fuel_usage', args=["vehicle", "date", "mileage", "fuel_used"])
+tester.addAction('print_maintenance_history', args=["vehicle"])
+
+# Set the maximum number of actions
+tester.setMaxLength(100)
+
+# Set the maximum number of tests
+tester.setNumTests(10)
+
+# Generate tests
+tester.generateTests()
